@@ -1,0 +1,46 @@
+# dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# builds
+.next/
+frontend/.next/
+frontend/out/
+frontend/build/
+backend/dist/
+backend/coverage/
+frontend/coverage/
+
+# env files
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+backend/.env
+backend/.env.*
+!frontend/.env.example
+!backend/.env.example
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+
+# generated/cache
+*.tsbuildinfo
+frontend/next-env.d.ts
+backend/generated/
+.vercel/
+
+# AI/tooling local state
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
