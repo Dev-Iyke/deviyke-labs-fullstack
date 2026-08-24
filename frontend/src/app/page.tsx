@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <main id="main-content" className="flex-1">
       <FoundationHero />
-      <SelectedWorkSection />
       <CapabilityNarrativeSection />
       <EngineeringPhilosophySection />
+      <SelectedWorkSection />
       <TechnicalToolboxSection />
       <HomeContactCtaSection />
     </main>

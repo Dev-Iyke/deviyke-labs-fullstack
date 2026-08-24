@@ -8,6 +8,10 @@ export function CapabilityNarrativeSection() {
   return (
     <Section className="relative overflow-hidden">
       <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-border to-transparent"
+        aria-hidden="true"
+      />
+      <div
         className="pointer-events-none absolute left-0 top-24 h-72 w-72 rounded-full bg-signal/8 blur-3xl"
         aria-hidden="true"
       />
@@ -24,8 +28,8 @@ export function CapabilityNarrativeSection() {
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
               I lead with the interface, but I build it with the surrounding
               system in mind: data contracts, server state, validation,
-              collaboration with backend teams, and the operational details
-              that make a product feel reliable.
+              collaboration with backend teams, and the operational details that
+              make a product feel reliable.
             </p>
           </div>
         </Reveal>
