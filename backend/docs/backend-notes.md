@@ -45,12 +45,12 @@ Why this is a good v1 choice:
 
 `src/app.controller.ts` receives HTTP requests. The starter app currently handles `GET /`.
 
-`src/app.service.ts` contains logic used by the controller. The starter app currently returns `Hello World!`.
+`src/app.service.ts` contains logic used by the controller. The starter app currently returns `DevIyke Labs API is running!`.
 
 Request flow in the starter app:
 
 ```text
-GET / -> AppController -> AppService -> "Hello World!"
+GET / -> AppController -> AppService -> "DevIyke Labs API is running!"
 ```
 
 ## NestJS Modules And Providers
@@ -73,7 +73,7 @@ Practical example:
 @Injectable()
 export class AppService {
   getHello() {
-    return 'Hello World!';
+    return 'DevIyke Labs API is running!';
   }
 }
 ```

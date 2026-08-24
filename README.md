@@ -1,8 +1,12 @@
-# DevIyke Labs Full-Stack Showcase
+# DevIyke Labs Full-Stack Portfolio
 
-DevIyke Labs is a full-stack portfolio and code-sample project for presenting Obasi Ikechukwu's software engineering work, project case studies, and contact flow in one coherent application.
+DevIyke Labs is a full-stack portfolio project for presenting Obasi Ikechukwu's software engineering work, project case studies, and contact flow in one coherent application.
 
-This repository is a showcase copy created for review and submission. The frontend and backend originally lived as separate local projects and separate Git repositories. They were copied into this unified folder so reviewers can inspect the complete application together.
+The frontend and backend originally lived as separate projects. This repository brings them together so the complete application can be viewed, run, and reviewed as one full-stack system.
+
+## Live Site
+
+- Frontend: [https://deviyke-labs.vercel.app](https://deviyke-labs.vercel.app)
 
 ## Project Structure
 
@@ -11,7 +15,7 @@ frontend/  Next.js portfolio frontend
 backend/   NestJS portfolio API
 ```
 
-The original individual repositories can still remain the source projects. This merged repository is currently intended as a submission-friendly full-stack view of the application.
+The individual frontend and backend projects may continue to evolve separately. This repository keeps the current full-stack application structure visible in one place.
 
 ## What The Application Does
 
@@ -116,7 +120,7 @@ backend/src/prisma
 
 The backend uses Prisma with PostgreSQL.
 
-Main models:
+Current models:
 
 - `Project`
 - `ContactSubmission`
@@ -142,8 +146,6 @@ Frontend:
 NEXT_PUBLIC_API_BASE_URL=
 ```
 
-`NEXT_PUBLIC_API_BASE_URL` is used by the browser-side frontend, so it must only contain a public API base URL. It must not contain secrets.
-
 Backend:
 
 ```env
@@ -151,8 +153,6 @@ PORT=
 CORS_ORIGINS=
 DATABASE_URL=
 ```
-
-`DATABASE_URL` is sensitive and must stay out of Git. Use sanitized `.env.example` files for variable names and placeholders only.
 
 ## Running Locally
 
@@ -191,7 +191,6 @@ Backend:
 cd backend
 npm run lint
 npm run test
-npm run test:e2e
 npm run build
 ```
 
@@ -199,29 +198,34 @@ Some backend commands require a valid local backend environment, especially `DAT
 
 ## Deployment Notes
 
-The backend documentation in this repository describes a Render deployment backed by Supabase PostgreSQL. The frontend is Vercel-oriented because it is a Next.js application.
+The frontend is deployed on Vercel. The backend deployment notes describe a Render service backed by Supabase PostgreSQL.
 
-This showcase repository does not currently include unified deployment configuration. It is primarily prepared as a public code sample that shows the full application structure in one repository.
+This repository does not currently include unified deployment configuration. The frontend and backend can still be deployed independently.
 
-## Testing Status
+## Testing
 
-Current test coverage is limited. The backend contains starter-level tests, but the project and contact API flows need stronger coverage.
+Backend tests can be run from the backend folder:
 
-Highest-value future tests:
+```bash
+cd backend
+npm run test
+```
 
-- Backend project listing and featured filtering.
-- Backend project detail not-found behavior.
-- Backend contact submission validation and persistence.
-- Frontend contact form validation and submission states.
-- Frontend project loading, empty, and error states.
+The frontend currently uses lint and production build checks as the main verification commands:
 
-## Security And Privacy
+```bash
+cd frontend
+npm run lint
+npm run build
+```
 
-- Real `.env` files should remain ignored.
-- `DATABASE_URL` and other credentials must never be committed.
-- `NEXT_PUBLIC_*` values are exposed to the browser and must not contain secrets.
-- Contact submissions are public-facing input and should eventually receive spam/rate-limit protection.
-- Public project case studies should avoid private client data, credentials, internal URLs, and confidential business details.
+## Configuration And Privacy
+
+- Real environment files are kept out of Git.
+- Example environment files document required variables without private values.
+- Public frontend configuration uses `NEXT_PUBLIC_*` only where browser exposure is intended.
+- Project case studies are written for public viewing and avoid private client data, credentials, internal URLs, and confidential business details.
+- Contact submissions are stored through the backend API instead of being handled directly by the frontend.
 
 ## Current Strengths
 
@@ -232,19 +236,3 @@ Highest-value future tests:
 - Sensible NestJS module, controller, service, DTO, and Prisma separation.
 - Database migrations and seed data are present.
 - The project honestly shows a frontend-heavy engineer moving into deeper full-stack/backend work.
-
-## Planned Improvements
-
-- Replace starter README content inside the individual app folders.
-- Remove temporary debug logs from request paths.
-- Add sanitized `frontend/.env.example`.
-- Add meaningful backend tests for project and contact flows.
-- Add frontend tests for the contact form and API-backed project views.
-- Pin the Node.js version for more reproducible deployment.
-- Add CI for lint, build, and test checks.
-
-## MLH Code Sample Context
-
-This repository is intended to be representative, reviewable, and discussable in a technical interview. It combines a polished portfolio frontend with a practical backend API that persists project and contact data.
-
-The goal is not to overstate the application as an enterprise platform. The goal is to show maintainable TypeScript application structure, thoughtful frontend work, practical backend foundations, and clear full-stack data flow.
