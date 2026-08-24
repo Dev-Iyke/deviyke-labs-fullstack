@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/features/projects/components/ProjectCard";
 import { useGetAllProjects } from "@/features/projects/services/projects.api";
 
-const featuredProjectPlaceholders = Array.from({ length: 4 });
+const featuredProjectPlaceholders = Array.from({ length: 2 });
 
 export function SelectedWorkSection() {
   const {
